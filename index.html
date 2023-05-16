@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+    <title>Photo editing</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="startScreen" class="start-screen">
+        <label for="fileUpload" class="start__input-label">
+          Select Image
+          <input type="file" id="fileUpload" class="start__input" />
+        </label>
+      </div>
+      <div class="item-panel">
+        <div class="item-panel__item">
+          <p class="item-panel__heading">Stamp</p>
+          <ul class="item-panel__stamps">
+            <li class="item-panel__stamp-container">
+              <img
+                class="item-panel__stamp-image"
+                src="./images/stamp_1.png"
+                alt="ルート66のスタンプ"
+              />
+            </li>
+            <li class="item-panel__stamp-container">
+              <img
+                class="item-panel__stamp-image"
+                src="./images/stamp_2.png"
+                alt="カメラのスタンプ"
+              />
+            </li>
+            <li class="item-panel__stamp-container">
+              <img
+                class="item-panel__stamp-image"
+                src="./images/stamp_3.png"
+                alt="旅行のスタンプ"
+              />
+            </li>
+            <li class="item-panel__stamp-container">
+              <img
+                class="item-panel__stamp-image"
+                src="./images/stamp_4.png"
+                alt="飛行機のスタンプ"
+              />
+            </li>
+            <li class="item-panel__stamp-container">
+              <img
+                class="item-panel__stamp-image"
+                src="./images/stamp_5.png"
+                alt="パスポートのスタンプ"
+              />
+            </li>
+            <li class="item-panel__stamp-container">
+              <img
+                class="item-panel__stamp-image"
+                src="./images/stamp_6.png"
+                alt="コーヒーのスタンプ"
+              />
+            </li>
+            <li class="item-panel__stamp-container">
+              <img
+                class="item-panel__stamp-image"
+                src="./images/stamp_7.png"
+                alt="アイスクリームのスタンプ"
+              />
+            </li>
+            <li class="item-panel__stamp-container">
+              <img
+                class="item-panel__stamp-image"
+                src="./images/stamp_8.png"
+                alt="地球儀のスタンプ"
+              />
+            </li>
+            <li class="item-panel__stamp-container">
+              <img
+                class="item-panel__stamp-image"
+                src="./images/stamp_9.png"
+                alt="本のスタンプ"
+              />
+            </li>
+            <li class="item-panel__stamp-container">
+              <img
+                class="item-panel__stamp-image"
+                src="./images/stamp_10.png"
+                alt="サングラスのスタンプ"
+              />
+            </li>
+            <li class="item-panel__stamp-container">
+              <img
+                class="item-panel__stamp-image"
+                src="./images/stamp_11.png"
+                alt="地図のスタンプ"
+              />
+            </li>
+            <li class="item-panel__stamp-container">
+              <img
+                class="item-panel__stamp-image"
+                src="./images/stamp_12.png"
+                alt="ランプのスタンプ"
+              />
+            </li>
+          </ul>
+        </div>
+        <div class="item-panel__item">
+          <p class="item-panel__heading">Text</p>
+          <div class="item-panel__text-contents">
+            <div class="text-contents__form">
+              <input
+                type="text"
+                id="text"
+                class="text-form__input"
+                minlength="1"
+                maxlength="20"
+              />
+              <button id="textAddButton" class="text-form__add-button">
+                Add
+              </button>
+            </div>
+            <div
+              id="colorsCanvasContainer"
+              class="text-contents__color-palette"
+            ></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="canvas-wrapper">
+        <div id="canvasContainer" class="canvas-container"></div>
+      </div>
+      <div class="tool-panel">
+        <button id="biggerButton" class="tool-panel__item">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            class="tool-panel__item-icon"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M15 3.75a.75.75 0 01.75-.75h4.5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0V5.56l-3.97 3.97a.75.75 0 11-1.06-1.06l3.97-3.97h-2.69a.75.75 0 01-.75-.75zm-12 0A.75.75 0 013.75 3h4.5a.75.75 0 010 1.5H5.56l3.97 3.97a.75.75 0 01-1.06 1.06L4.5 5.56v2.69a.75.75 0 01-1.5 0v-4.5zm11.47 11.78a.75.75 0 111.06-1.06l3.97 3.97v-2.69a.75.75 0 011.5 0v4.5a.75.75 0 01-.75.75h-4.5a.75.75 0 010-1.5h2.69l-3.97-3.97zm-4.94-1.06a.75.75 0 010 1.06L5.56 19.5h2.69a.75.75 0 010 1.5h-4.5a.75.75 0 01-.75-.75v-4.5a.75.75 0 011.5 0v2.69l3.97-3.97a.75.75 0 011.06 0z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </button>
+        <button id="smallerButton" class="tool-panel__item">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            class="tool-panel__item-icon"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M3.22 3.22a.75.75 0 011.06 0l3.97 3.97V4.5a.75.75 0 011.5 0V9a.75.75 0 01-.75.75H4.5a.75.75 0 010-1.5h2.69L3.22 4.28a.75.75 0 010-1.06zm17.56 0a.75.75 0 010 1.06l-3.97 3.97h2.69a.75.75 0 010 1.5H15a.75.75 0 01-.75-.75V4.5a.75.75 0 011.5 0v2.69l3.97-3.97a.75.75 0 011.06 0zM3.75 15a.75.75 0 01.75-.75H9a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-2.69l-3.97 3.97a.75.75 0 01-1.06-1.06l3.97-3.97H4.5a.75.75 0 01-.75-.75zm10.5 0a.75.75 0 01.75-.75h4.5a.75.75 0 010 1.5h-2.69l3.97 3.97a.75.75 0 11-1.06 1.06l-3.97-3.97v2.69a.75.75 0 01-1.5 0V15z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </button>
+        <button id="rightRotateButton" class="tool-panel__item">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            class="tool-panel__item-icon"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M4.755 10.059a7.5 7.5 0 0112.548-3.364l1.903 1.903h-3.183a.75.75 0 100 1.5h4.992a.75.75 0 00.75-.75V4.356a.75.75 0 00-1.5 0v3.18l-1.9-1.9A9 9 0 003.306 9.67a.75.75 0 101.45.388zm15.408 3.352a.75.75 0 00-.919.53 7.5 7.5 0 01-12.548 3.364l-1.902-1.903h3.183a.75.75 0 000-1.5H2.984a.75.75 0 00-.75.75v4.992a.75.75 0 001.5 0v-3.18l1.9 1.9a9 9 0 0015.059-4.035.75.75 0 00-.53-.918z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </button>
+        <button id="leftRotateButton" class="tool-panel__item">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            class="tool-panel__item-icon"
+            transform="scale(-1 1)"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M4.755 10.059a7.5 7.5 0 0112.548-3.364l1.903 1.903h-3.183a.75.75 0 100 1.5h4.992a.75.75 0 00.75-.75V4.356a.75.75 0 00-1.5 0v3.18l-1.9-1.9A9 9 0 003.306 9.67a.75.75 0 101.45.388zm15.408 3.352a.75.75 0 00-.919.53 7.5 7.5 0 01-12.548 3.364l-1.902-1.903h3.183a.75.75 0 000-1.5H2.984a.75.75 0 00-.75.75v4.992a.75.75 0 001.5 0v-3.18l1.9 1.9a9 9 0 0015.059-4.035.75.75 0 00-.53-.918z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </button>
+        <button id="toUpButton" class="tool-panel__item">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            class="tool-panel__item-icon"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M2.25 4.5A.75.75 0 013 3.75h14.25a.75.75 0 010 1.5H3a.75.75 0 01-.75-.75zm14.47 3.97a.75.75 0 011.06 0l3.75 3.75a.75.75 0 11-1.06 1.06L18 10.81V21a.75.75 0 01-1.5 0V10.81l-2.47 2.47a.75.75 0 11-1.06-1.06l3.75-3.75zM2.25 9A.75.75 0 013 8.25h9.75a.75.75 0 010 1.5H3A.75.75 0 012.25 9zm0 4.5a.75.75 0 01.75-.75h5.25a.75.75 0 010 1.5H3a.75.75 0 01-.75-.75z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </button>
+        <button id="toDownButton" class="tool-panel__item">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            class="tool-panel__item-icon"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M2.25 4.5A.75.75 0 013 3.75h14.25a.75.75 0 010 1.5H3a.75.75 0 01-.75-.75zm0 4.5A.75.75 0 013 8.25h9.75a.75.75 0 010 1.5H3A.75.75 0 012.25 9zm15-.75A.75.75 0 0118 9v10.19l2.47-2.47a.75.75 0 111.06 1.06l-3.75 3.75a.75.75 0 01-1.06 0l-3.75-3.75a.75.75 0 111.06-1.06l2.47 2.47V9a.75.75 0 01.75-.75zm-15 5.25a.75.75 0 01.75-.75h9.75a.75.75 0 010 1.5H3a.75.75 0 01-.75-.75z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </button>
+        <button id="destroyButton" class="tool-panel__item">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            class="tool-panel__item-icon"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
+      <button id="saveButton" class="save-button">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          class="save-button__icon"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M12 2.25a.75.75 0 01.75.75v11.69l3.22-3.22a.75.75 0 111.06 1.06l-4.5 4.5a.75.75 0 01-1.06 0l-4.5-4.5a.75.75 0 111.06-1.06l3.22 3.22V3a.75.75 0 01.75-.75zm-9 13.5a.75.75 0 01.75.75v2.25a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5V16.5a.75.75 0 011.5 0v2.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V16.5a.75.75 0 01.75-.75z"
+            clip-rule="evenodd"
+          />
+        </svg>
+        Save as jpeg!!
+      </button>
+    </div>
+    <script src="https://unpkg.com/konva@9/konva.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

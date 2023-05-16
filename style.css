@@ -1,0 +1,246 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Noto Sans JP", sans-serif;
+  color: #2563eb;
+}
+
+p {
+  font-size: 1.6rem;
+}
+
+.wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  background-color: #eff6ff;
+}
+
+.start-screen {
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(37, 99, 235, 0.8);
+}
+
+.start__input-label {
+  padding: 10px;
+  font-size: 1.2rem;
+  background-color: #fff;
+  border-radius: 4px;
+  border: solid 2px #2563eb;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.start__input-label:hover {
+  color: #fff;
+  background-color: #2563eb;
+  border: solid 2px #fff;
+  box-shadow: 0 0px 4px rgba(0, 0, 0, 0.25);
+  transform: translateY(2px);
+}
+
+.start__input {
+  display: none;
+}
+
+.item-panel {
+  width: 500px;
+  height: 100%;
+  padding: 0 40px;
+  background-color: #dbeafe;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 4px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.item-panel__item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.item-panel__stamps {
+  width: 100%;
+  padding: 12px 0;
+  list-style: none;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(6, auto);
+  gap: 10px;
+  border-radius: 4px;
+  box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.1) inset, -4px -4px 4px 0 #fff inset;
+}
+
+.item-panel__stamp-container {
+  width: fit-content;
+  padding: 4px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+  transition: filter 0.2s;
+}
+
+.item-panel__stamp-container:hover {
+  cursor: pointer;
+  filter: brightness(0.96);
+}
+
+.item-panel__stamp-image {
+  display: block;
+  width: 45px;
+  height: 45px;
+  pointer-events: none;
+}
+
+.item-panel__text-contents {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.text-contents__form {
+  width: 100%;
+  display: flex;
+}
+
+.text-form__input {
+  width: 100%;
+  padding: 4px;
+  border-radius: 4px 0 0 4px;
+  border: none;
+  box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.1) inset, -4px -4px 4px 0 #fff inset;
+}
+
+.text-form__add-button {
+  height: auto;
+  padding: 0 8px;
+  appearance: none;
+  background-color: #2563eb;
+  border: 0;
+  border-radius: 0 4px 4px 0;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 1rem;
+  color: #fff;
+  transition: filter 0.2s;
+}
+
+.text-form__add-button:hover {
+  cursor: pointer;
+  filter: brightness(0.96);
+}
+
+.text-contents__color-palette {
+  width: 100%;
+  padding: 18px 0;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  border-radius: 4px;
+  box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.1) inset, -4px -4px 4px 0 #fff inset;
+}
+
+.canvas-wrapper {
+  width: 640px;
+  height: 640px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.canvas-container {
+  width: fit-content;
+  background-color: #eff6ff;
+}
+
+.tool-panel {
+  margin-top: auto;
+  padding: 16px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: auto 40px 40px 0;
+  background-color: #eff6ff;
+  border-radius: 4px;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1), -3px -3px 8px #ffffff;
+}
+
+.tool-panel__item {
+  padding: 8px;
+  appearance: none;
+  background-color: #fff;
+  border: 0;
+  border-radius: 4px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+  transition: filter 0.2s;
+}
+
+.tool-panel__item:hover {
+  cursor: pointer;
+  filter: brightness(0.96);
+}
+
+.tool-panel__item-icon {
+  display: block;
+  width: 30px;
+  height: 30px;
+  fill: #2563eb;
+}
+
+.save-button {
+  appearance: none;
+  padding: 8px 12px;
+  background-color: #dbeafe;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 1.2rem;
+  color: #2563eb;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  border: none;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.save-button:hover {
+  background-color: #2563eb;
+  color: #fff;
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.save-button:hover .save-button__icon {
+  fill: #fff;
+}
+
+.save-button__icon {
+  width: 20px;
+  height: 20px;
+  fill: #2563eb;
+}
